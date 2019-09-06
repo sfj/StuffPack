@@ -7,5 +7,7 @@ namespace StuffPack.Models
         public PackContext(DbContextOptions<PackContext> options) : base(options) {}
 
         public DbSet<PackItem> PackItems { get; set; }
+
+        public DbSet<PackList> PackLists { get; set; }
     }
 }
