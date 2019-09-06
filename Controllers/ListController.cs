@@ -22,8 +22,9 @@ namespace StuffPack.Controllers
                 // Create a new PackList if collection is empty,
                 // which means you can't delete all PackList.
                 PackList packList1 = new PackList { Description = "List1" };
-                packList1.PackItems.Add(new PackItem { Description = "PackItem1ListItem1" } );
-                
+                packList1.PackItems.Add(new PackItem { Description = "PackItem1ListItem1", Weight = 25, Volume = 30 } );
+                packList1.PackItems.Add(new PackItem { Description = "PackItem1ListItem2", Weight = 5, Volume = 10 } );
+
                 _context.PackLists.Add(packList1);
                 
                 _context.SaveChanges();

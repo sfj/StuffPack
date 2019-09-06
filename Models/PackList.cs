@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace StuffPack.Models
 {
@@ -9,7 +10,19 @@ namespace StuffPack.Models
 
         public Collection<PackItem> PackItems;
 
-        public string Description { get; set; }        
+        public string Description { get; set; }
+
+        public decimal TotalWeight { get 
+            {
+                return PackItems.Sum(item => item.Weight);
+            }
+        }
+
+         public decimal TotalVolume { get 
+            {
+                return PackItems.Sum(item => item.Volume);
+            }
+        }
 
         public PackList()
         {
