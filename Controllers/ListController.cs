@@ -49,5 +49,14 @@ namespace StuffPack.Controllers
 
             return item;
         }
+
+        [HttpPost]
+        public async Task<ActionResult<PackList>> PostPackList(PackList list)
+        {
+            _context.PackLists.Add(list);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetPackList), new { id = list.Id }, list);
+        }
     }
 }
